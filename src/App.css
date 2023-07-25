@@ -1,4 +1,326 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Overpass");
+
+#logo-header{
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin:0;
+}
+
+#header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.31rem;
+  width: 100vw;
+  position: sticky;
+  top:0;
+  z-index: 100;
+  box-sizing: border-box;
+  background: #1A1A1D;
+}
+
+#signup-header{
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.section-font{
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.selected-section-font{
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#sections{
+  display: flex;
+  gap:3.58rem;
+}
+
+#header-right{
+  display: flex;
+  gap:2.39rem;
+  flex-shrink: 0;
+}
+
+#footer{
+  display: flex;
+  flex-shrink: 0;
+  background: #111;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem;
+  width: 100vw;
+  /* position:fixed;
+  bottom: 0; */
+  box-sizing: border-box;
+}
+
+#logo-footer{
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.footer-list-item{
+  color: #FFF;
+  font-family: Overpass;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer-list-heading{
+  color: #DA3714;
+  font-family: Overpass;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.footer-list{
+  display: flex;
+  flex-direction: column;
+  gap:0.56rem;
+  flex-wrap: wrap;
+}
+
+#main-content{
+  margin: 0;
+  /* position: fixed; */
+  /* top:4.8rem; */
+  /* bottom: 14rem; */
+  width: 100vw;
+  overflow: scroll;
+}
+
+#trending-heading{
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.trending-list{
+  margin: 0;
+  display: flex;
+  gap:1.4rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  
+}
+.trending-list::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+.trending-image{
+  width: 83.90625rem;
+  height: 41.76563rem;
+  flex-shrink: 0;
+  object-fit: contain;
+  /* width: 9.18106rem;
+  height: 13.54975rem;
+  flex-shrink: 0; */
+}
+
+.trending{
+  width: 9.18106rem;
+  height: 13.54975rem;
+  object-fit: cover;
+  cursor: pointer;
+}
+.trending:hover{
+  /* width: calc(9.18106rem*1.2);
+  height: calc(13.54975rem*1.2); */
+  scale: 1.2;
+  z-index: 200;
+  object-fit: cover;
+}
+
+.category-box{
+  width: 18.75rem;
+  height: 20.625rem;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+  /* opacity: 0.699999988079071; */
+  background: #131313;
+  backdrop-filter: blur(95px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.category-img{
+  width: 18.75rem;
+  height: 20.625rem;
+  position: absolute;
+  object-fit:cover;
+  opacity: 0.5;
+  border-radius: 0.75rem;
+  background-color: lightgray;
+}
+
+.category-desc{
+  width: 13.5rem;
+  /* width: fit-content; */
+  color: #FFF;
+  text-align: center;
+  font-family: Overpass;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.06rem;
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  z-index: 100;
+  opacity: 100%;
+  flex-wrap: wrap;
+  position: absolute;
+}
+
+.image-container{
+  position: relative;
+  
+}
+.image-heading{
+  width: 65rem;
+  height: 9rem;
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;  
+  flex-wrap: wrap;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.image-overview{
+  width: 35.4375rem;
+  height: 8.8125rem;
+  /* flex-shrink: 0; */
+  color: #FFF;
+  font-family: Overpass;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem; /* 133.333% */
+  letter-spacing: 0.03375rem;
+  text-align: left;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; */
+  position: relative;
+}
+
+/* .image-overview:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+
+.image-overview:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+} */
+
+.watchnow-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:0.84rem;
+  width: 11.01563rem;
+  height: 2.8125rem;
+  flex-shrink: 0;
+  border-radius: 1.6875rem;
+  background: #DA3714;
+  border: none;
+}
+
+.watchnow-text{
+  color: #FFF;
+  font-family: Overpass;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.03375rem;
+}
+
+.btn-holder{
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+  align-items: center;
+}
+
+.btn-holder-text{
+  color: #FFF;
+  font-family: Overpass;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem; /* 160% */
+  letter-spacing: 0.02813rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +357,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
