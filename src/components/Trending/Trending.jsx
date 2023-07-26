@@ -38,7 +38,7 @@ function Trending() {
       style={{
         display: "flex",
         flexDirection: "column",
-        margin: "0",
+        // margin: "0",
         padding: "3rem",
         // paddingTop: "3rem",
       }}

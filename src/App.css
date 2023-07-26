@@ -133,6 +133,7 @@
   height: calc(13.54975rem*1.2);
   margin: 0;
   display: flex;
+  align-items: center;
   gap:1.4rem;
   overflow-y: hidden;
   overflow-x: scroll;
@@ -156,6 +157,7 @@
 .trending{
   width: 9.18106rem;
   height: 13.54975rem;
+  z-index: 1000;
   object-fit: cover;
   cursor: pointer;
 }
@@ -167,6 +169,7 @@
   /* z-index: 200; */
   transition: border .25s cubic-bezier(.33,.04,.63,.93);
   object-fit: cover;
+  opacity: 50%;
 }
 
 .category-box{
@@ -319,8 +322,21 @@
 .trending-title{
   position: absolute;
   /* display: none; */
+  bottom: 1rem;
   width: 9.18106rem;
   opacity: 0;
+
+  color: #FFF;
+  font-family: Overpass;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem; /* 160% */
+  letter-spacing: 0.02813rem;
+}
+
+.trending-wrapper{
+  position: relative;
 }
 
 .trending-wrapper:hover .trending-title{
