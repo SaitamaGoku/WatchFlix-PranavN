@@ -40,13 +40,18 @@ function CarouselHeader() {
     <div style={{ display: "flex", flexDirection: "column", margin: "0" }}>
       {/* <span id="trending-heading">Trending Now</span> */}
       <Carousel
-        infiniteLoop={true}
         autoPlay={true}
         showThumbs={false}
         showStatus={false}
-        stopOnHover={true}
+        // stopOnHover={true}
         showIndicators={false}
-        interval={10000}
+        // interval={10000}
+        // infiniteLoop={true}
+        style={{
+          width: "88.79vw",
+          height: "85.674vh",
+          borderRadius: "2rem;",
+        }}
       >
         {/* <div className="trending-list"> */}
         {data?.results.map((item, index) => {
@@ -59,18 +64,18 @@ function CarouselHeader() {
             //     margin: "auto",
             //   }}
             // ></div>
-            <div
-              className="image-container"
-              style={{ borderRadius: "0.9375rem" }}
-            >
+            <div className="image-container">
               <img
                 src={imgLink}
                 alt={item?.title}
                 style={{
-                  width: "83.90625rem",
-                  height: "41.76563rem",
-                  objectFit: "contain",
+                  width: "88.79vw",
+                  height: "85.674vh",
+                  // width:"83.907rem",
+                  height: "41.766rem",
+                  objectFit: "cover",
                   opacity: "50%",
+                  borderRadius: "0.9375rem;",
                 }}
               />
               <div
@@ -78,11 +83,12 @@ function CarouselHeader() {
                   display: "flex",
                   flexDirection: "column",
                   position: "absolute",
-                  top: "2.6rem",
-                  left: "12rem",
+                  top: "5.333vh",
+                  left: "9vw",
                   alignItems: "flex-start",
-                  width: "47.5625rem",
-                  height: "26.71875rem",
+                  width: "50.331vw",
+                  // height: "54.808vh",
+                  height: "26.719rem",
                   gap: "1rem",
                 }}
               >
@@ -97,7 +103,7 @@ function CarouselHeader() {
                 <div
                   style={{
                     display: "flex",
-                    gap: "2.25rem",
+                    gap: "2.381vw",
                     alignItems: "center",
                   }}
                 >

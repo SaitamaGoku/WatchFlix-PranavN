@@ -40,6 +40,7 @@ function Trending() {
         flexDirection: "column",
         margin: "0",
         padding: "3rem",
+        // paddingTop: "3rem",
       }}
     >
       <span id="trending-heading">Trending Now</span>
@@ -53,12 +54,10 @@ function Trending() {
             //     background: `url(${imgLink}), lightgray 50% / cover no-repeat`,
             //   }}
             // ></div>
-
-            <img
-              src={imgLink}
-              alt={item?.title}
-              className="trending"
-            ></img>
+            <div className="trending-wrapper">
+              <img src={imgLink} alt={item?.title} className="trending" />
+              <div className="trending-title">{item?.title}</div>
+            </div>
           );
         })}
       </div>

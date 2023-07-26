@@ -17,6 +17,8 @@ function App() {
                 <HomePageLayout>
                   <CarouselHeader />
                   <Trending />
+                  <Trending />
+                  <Trending />
                 </HomePageLayout>
               }
             />

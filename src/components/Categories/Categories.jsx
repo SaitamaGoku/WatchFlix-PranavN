@@ -36,7 +36,7 @@ const images = [
     link: "https://s3-alpha-sig.figma.com/img/576d/4166/bbbe3282a1cb8f27b5c526bced34edb4?Expires=1691366400&Signature=dwZKUtWhS9vUCT6e9AAUnCnEEK2eVsrq2MN~3pY4f9gGdPL~~sPPXMfBeWdUNSD4qHzfR7TtUMABuh8pYygWJBwrZsrx~LtIBCAmMpGp4vpe71Y8eIzRfHI3LLf0TYI8AVIUJHD-XM2Kxb-HsoPJrtRoKOgHOAHHd~FgzTzx2OrrzsRhHtc7hyHoibFoc95bqN7akv68Em8slTvFYBzeXhTjTU1G5uLpHlQkFJobLeZLaN122B5doZlXRgwgv8XDanIPB7CCzsDIZ1q9ZXgDB6WVps5pHE7rN~ESPI1MMkizL9quY-Y4Nbi0eh5w-tYKyXE78kPvBGFS-s~UfTnpqQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   },
   {
-    desc: 'Sci-Fi',
+    desc: "Sci-Fi",
     link: "https://s3-alpha-sig.figma.com/img/4afa/e567/2a2a94601c5215ea6aa7d17020ebd53d?Expires=1691366400&Signature=C7qLehs6YbwOVmfHDkxOX0Io7o-NMAL2ElTiXDbxOjNjulDhn5veU8Kyogrykt-Ky-rHi4dmetDMxK8AvVDYEK4EHLOgwvPP0JNdrdRdVSebXQBsadRHJcx~gAGHyVA1Vh7aKXmyPPd4KeFnArEiDwk5E0Gj9Xbt6cNGvL719kJCz9fFdqsXLVmohz3NjBAU-HVpcMfdXC2Rja7uFi1QjAHvaH2y4URRrSAdzm-IqKhZkW-Noo1b-esfJVK0TpOJoRZJ8Kw447kFJXdgZx7v1fXHtw-70kWdYZQIOH44bi2JQhlyNcTMWRD8QtSZlsbON19nYt9jQK0FpBeHRphcZg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   },
   {
@@ -61,24 +61,28 @@ function Categories() {
         margin: "2rem",
       }}
     >
-      {images.map((item, index) => {
-        return (
-          <div
-            className="category-box"
-            // style={{
-            //   background: `url(${item.link})`,
-            //   //   background: "lightgray 50%"
-            //   backgroundRepeat: "no-repeat",
-            //   backgroundColor:"lightgray",
-            //   opacity:"50%",
+      {/* <div style={{ display: "flex", flexWrap: "wrap" }}> */}
+        {images.map((item, index) => {
+          return (
+            <div
+              className="category-box"
+              // style={{
+              //   background: `url(${item.link})`,
+              //   //   background: "lightgray 50%"
+              //   backgroundRepeat: "no-repeat",
+              //   backgroundColor:"lightgray",
+              //   opacity:"50%",
 
-            // }}
-          >
-            <img className="category-img" src={item?.link}/>
-            <span className="category-desc" style={{opacity:"1"}} >{item.desc}</span>
-          </div>
-        );
-      })}
+              // }}
+            >
+              <img className="category-img" src={item?.link} />
+              <span className="category-desc" style={{ opacity: "1" }}>
+                {item.desc}
+              </span>
+            </div>
+          );
+        })}
+      {/* </div> */}
     </div>
   );
 }
