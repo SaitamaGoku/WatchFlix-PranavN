@@ -91,6 +91,14 @@ function CarouselHeader() {
                     height="85.674vmin"
                     controls={true}
                     playing={false}
+                    light={
+                      <>
+                        <img
+                          src="https://images.lifestyleasia.com/wp-content/uploads/sites/2/2023/06/14115719/MIDR1_US_2023_SA_16x9_1920x1080_NB_2215190_1920x1080.jpeg"
+                          alt="MI Poster"
+                        ></img>
+                      </>
+                    }
                     style={{
                       margin: "auto",
                       position: "absolute",
