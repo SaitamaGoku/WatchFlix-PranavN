@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
   const navigate = useNavigate();
+  const [isTabActive, setIsTabActive] = useState({ movies: true });
   return (
     <header id="header">
       <div
         id="logo-header"
         onClick={() => {
+          setIsTabActive({ movies: true });
           navigate("/");
         }}
       >
@@ -15,31 +18,106 @@ function Header() {
       </div>
       <div id="sections">
         <NavLink
-          to="/"
+          to="/movies"
           style={({ isActive, isPending }) => {
             return {
-              fontWeight: isActive ? "700" : "400",
+              //   fontWeight: isActive ? "700" : "400",
               textDecoration: "none",
-              //   color: isActive ? "red" : "black",
             };
           }}
+          onClick={() => setIsTabActive({ movies: true })}
         >
-          <span className="section-font">Movies</span>
+          <span style={{ display: "flex", flexDirection: "column" }}>
+            <span
+              className={
+                isTabActive?.movies ? "active-section-font" : "section-font"
+              }
+            >
+              Movies
+            </span>
+            <span
+              className={isTabActive?.movies ? "active-tab" : "inactive-tab"}
+            ></span>
+          </span>
         </NavLink>
 
-        <span className="section-font">TV Series</span>
-        <span className="section-font">Documentaries</span>
+        <NavLink
+          to="/tv-series"
+          style={({ isActive, isPending }) => {
+            return {
+              //   fontWeight: isActive ? "700" : "400",
+              textDecoration: "none",
+            };
+          }}
+          onClick={() => setIsTabActive({ tvSeries: true })}
+        >
+          <span style={{ display: "flex", flexDirection: "column" }}>
+            <span
+              className={
+                isTabActive?.tvSeries ? "active-section-font" : "section-font"
+              }
+            >
+              TV Series
+            </span>
+            <span
+              className={isTabActive?.tvSeries ? "active-tab" : "inactive-tab"}
+            ></span>
+          </span>
+        </NavLink>
+
+        <NavLink
+          to="/documentaries"
+          style={({ isActive, isPending }) => {
+            return {
+              //   fontWeight: isActive ? "700" : "400",
+              textDecoration: "none",
+            };
+          }}
+          onClick={() => setIsTabActive({ documentaries: true })}
+        >
+          <span style={{ display: "flex", flexDirection: "column" }}>
+            <span
+              className={
+                isTabActive?.documentaries
+                  ? "active-section-font"
+                  : "section-font"
+              }
+            >
+              Documentaries
+            </span>
+            <span
+              className={
+                isTabActive?.documentaries ? "active-tab" : "inactive-tab"
+              }
+            ></span>
+          </span>
+        </NavLink>
+
         <NavLink
           to="/categories"
           style={({ isActive, isPending }) => {
             return {
-              fontWeight: isActive ? "700" : "400",
+              //   fontWeight: isActive ? "700" : "400",
               textDecoration: "none",
               //   color: isActive ? "red" : "black",
             };
           }}
+          onClick={() => setIsTabActive({ categories: true })}
         >
-          <span className="section-font">Categories</span>
+          <span style={{ display: "flex", flexDirection: "column" }}>
+            <span
+              className={
+                isTabActive?.categories ? "active-section-font" : "section-font"
+              }
+            >
+              Categories
+            </span>
+            <span
+              className={
+                isTabActive?.categories ? "active-tab" : "inactive-tab"
+              }
+            ></span>
+          </span>
         </NavLink>
       </div>
       <div id="header-right">

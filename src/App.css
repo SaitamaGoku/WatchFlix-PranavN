@@ -46,6 +46,15 @@
   line-height: normal;
 }
 
+.active-section-font{
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
 .selected-section-font{
   color: #FFF;
   font-family: Poppins;
@@ -457,4 +466,13 @@ line-height: normal;
   /* border: 1px solid white; */
 }
 
+.active-tab{
+  width: 1.5rem;
+  height: 0.23438rem;
+  background: #DA3714;
+  /* font-weight: 700; */
+}
 
+.inactive-tab{
+  display: none;
+}

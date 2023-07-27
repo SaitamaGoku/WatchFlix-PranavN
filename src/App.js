@@ -29,6 +29,17 @@ function App() {
               }
             />
             <Route
+              path="movies"
+              element={
+                <HomePageLayout>
+                  <CarouselHeader />
+                  <Trending heading="Trending Now" />
+                  <Discover heading="Suspense" />
+                  <More heading="Sci-Fi" />
+                </HomePageLayout>
+              }
+            />
+            <Route
               path="categories"
               element={
                 <HomePageLayout>
