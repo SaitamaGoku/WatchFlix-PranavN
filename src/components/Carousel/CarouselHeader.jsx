@@ -64,7 +64,7 @@ function CarouselHeader() {
         {/* <div className="trending-list"> */}
 
         {data?.results.map((item, index) => {
-          let imgLink = imgPrefix + item?.poster_path;
+          let imgLink = imgPrefix + item?.backdrop_path;
           return (
             // <div
             //   className="trending-image"

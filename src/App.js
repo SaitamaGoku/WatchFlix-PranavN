@@ -24,8 +24,7 @@ function App() {
                   <CarouselHeader />
                   <Trending heading="Trending Now" />
                   <Discover heading="Suspense" />
-                  <Trending heading="Sci-Fi" />
-                  {/* <More heading="More" /> */}
+                  <More heading="Sci-Fi" />
                 </HomePageLayout>
               }
             />

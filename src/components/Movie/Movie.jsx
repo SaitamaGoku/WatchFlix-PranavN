@@ -17,10 +17,34 @@ let config = {
   },
 };
 
+let config2 = {
+  method: "get",
+  maxBodyLength: Infinity,
+  url: "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMTExNmExODI3MGM2MjQwNDM2YjU5NTBkM2E5Nzk0MiIsInN1YiI6IjY0Yjc5MDQ0MTA5Y2QwMDBjN2IwOGI4NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6RvMsGmolIcMF89SdM8MndX6WvFp-k3BeR5Mve8iT4U",
+    accept: "application/json",
+  },
+};
+
+let config3 = {
+  method: "get",
+  maxBodyLength: Infinity,
+  url: "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=vote_average.desc&without_genres=99,10755&vote_count.gte=200",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMTExNmExODI3MGM2MjQwNDM2YjU5NTBkM2E5Nzk0MiIsInN1YiI6IjY0Yjc5MDQ0MTA5Y2QwMDBjN2IwOGI4NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6RvMsGmolIcMF89SdM8MndX6WvFp-k3BeR5Mve8iT4U",
+    accept: "application/json",
+  },
+};
+
 const imgPrefix = "https://image.tmdb.org/t/p/w500";
 
 function Movie() {
   const [resData, setResData] = useState();
+  const [resData2, setResData2] = useState();
+  const [resData3, setResData3] = useState();
   const { id } = useParams();
   const navigate = useNavigate();
   console.log("id:", id);
@@ -32,6 +56,28 @@ function Movie() {
       .request(config)
       .then((response) => {
         setResData(response.data?.results);
+        console.log(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .request(config2)
+      .then((response) => {
+        setResData2(response.data?.results);
+        console.log(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .request(config3)
+      .then((response) => {
+        setResData3(response.data?.results);
         console.log(JSON.stringify(response.data));
       })
       .catch((error) => {
@@ -52,8 +98,16 @@ function Movie() {
 
   let filtered = resData?.filter((item, idx) => item?.id === +id);
 
+  if (filtered?.length <= 0) {
+    filtered = resData2?.filter((item, idx) => item?.id === +id);
+  }
+
+  if (filtered?.length <= 0) {
+    filtered = resData3?.filter((item, idx) => item?.id === +id);
+  }
+
   console.log("filter", filtered);
-  let imgLink = imgPrefix + filtered?.[0]?.poster_path;
+  let imgLink = imgPrefix + filtered?.[0]?.backdrop_path;
   return (
     <div
       style={{
@@ -162,40 +216,45 @@ function Movie() {
               </svg>
               <span className="btn-holder-text">SHARE</span>
             </div>
-            <div
+            {/* <div
+            className="play-btn"
+              onClick={() => {
+                navigate("/player");
+              }}
+            > */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="140"
+              height="151"
+              viewBox="0 0 140 151"
+              fill="none"
+              className="play-btn"
               onClick={() => {
                 navigate("/player");
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="140"
-                height="151"
-                viewBox="0 0 140 151"
-                fill="none"
-              >
-                <g clip-path="url(#clip0_2_1274)">
-                  <path
-                    d="M54.7026 101.067V50.9321L92.0675 75.9997L54.7026 101.067Z"
+              <g clip-path="url(#clip0_2_1274)">
+                <path
+                  d="M54.7026 101.067V50.9321L92.0675 75.9997L54.7026 101.067Z"
+                  fill="white"
+                />
+                <path
+                  d="M67 134.333C34.7825 134.333 8.66663 108.217 8.66663 75.9997C8.66663 43.7822 34.7825 17.6664 67 17.6664C99.2175 17.6664 125.333 43.7822 125.333 75.9997C125.333 108.217 99.2175 134.333 67 134.333ZM58.9616 55.0872C58.6106 54.853 58.2025 54.7184 57.781 54.6977C57.3595 54.677 56.9402 54.771 56.5679 54.9698C56.1956 55.1685 55.8842 55.4645 55.6667 55.8262C55.4493 56.1879 55.3341 56.6019 55.3333 57.0239V94.9756C55.3341 95.3976 55.4493 95.8115 55.6667 96.1733C55.8842 96.535 56.1956 96.831 56.5679 97.0297C56.9402 97.2285 57.3595 97.3225 57.781 97.3018C58.2025 97.2811 58.6106 97.1465 58.9616 96.9122L87.4225 77.9422C87.7426 77.7292 88.005 77.4405 88.1866 77.1016C88.3681 76.7627 88.4631 76.3842 88.4631 75.9997C88.4631 75.6153 88.3681 75.2368 88.1866 74.8979C88.005 74.559 87.7426 74.2702 87.4225 74.0572L58.9616 55.0872Z"
+                  fill="#DA3714"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_1274">
+                  <rect
+                    width="140"
+                    height="150.075"
                     fill="white"
+                    transform="translate(-0.000488281 0.54541)"
                   />
-                  <path
-                    d="M67 134.333C34.7825 134.333 8.66663 108.217 8.66663 75.9997C8.66663 43.7822 34.7825 17.6664 67 17.6664C99.2175 17.6664 125.333 43.7822 125.333 75.9997C125.333 108.217 99.2175 134.333 67 134.333ZM58.9616 55.0872C58.6106 54.853 58.2025 54.7184 57.781 54.6977C57.3595 54.677 56.9402 54.771 56.5679 54.9698C56.1956 55.1685 55.8842 55.4645 55.6667 55.8262C55.4493 56.1879 55.3341 56.6019 55.3333 57.0239V94.9756C55.3341 95.3976 55.4493 95.8115 55.6667 96.1733C55.8842 96.535 56.1956 96.831 56.5679 97.0297C56.9402 97.2285 57.3595 97.3225 57.781 97.3018C58.2025 97.2811 58.6106 97.1465 58.9616 96.9122L87.4225 77.9422C87.7426 77.7292 88.005 77.4405 88.1866 77.1016C88.3681 76.7627 88.4631 76.3842 88.4631 75.9997C88.4631 75.6153 88.3681 75.2368 88.1866 74.8979C88.005 74.559 87.7426 74.2702 87.4225 74.0572L58.9616 55.0872Z"
-                    fill="#DA3714"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_2_1274">
-                    <rect
-                      width="140"
-                      height="150.075"
-                      fill="white"
-                      transform="translate(-0.000488281 0.54541)"
-                    />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
+                </clipPath>
+              </defs>
+            </svg>
+            {/* </div> */}
           </div>
         </div>
       </div>
@@ -208,7 +267,7 @@ function Movie() {
           alignItems: "center",
           position: "relative",
           width: "100vmax",
-        //   marginTop: "10vmin",
+          //   marginTop: "10vmin",
           gap: "3vmax",
           marginLeft: "13vmax",
         }}

@@ -314,6 +314,7 @@
 .watchnow-btn:hover{
   /* opacity:110%; */
   border: 1px solid white;
+  cursor: pointer;
 }
 
 .watchnow-text{
@@ -385,6 +386,7 @@
 .close-btn:hover{
   background: gray;
   opacity: 70%;
+  cursor: pointer;
 }
 
 .movie-title{
@@ -450,6 +452,9 @@ line-height: normal;
 }
 
 
-
+.play-btn:hover{
+  cursor: pointer;
+  /* border: 1px solid white; */
+}
 
 
