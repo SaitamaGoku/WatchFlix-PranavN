@@ -15,7 +15,7 @@ let config = {
 
 const imgPrefix = "https://image.tmdb.org/t/p/w500";
 
-function Trending() {
+function Trending(props) {
   const [data, setData] = useState();
 
   //API Call
@@ -43,7 +43,7 @@ function Trending() {
         // paddingTop: "3rem",
       }}
     >
-      <span id="trending-heading">Trending Now</span>
+      <span id="trending-heading">{props?.heading}</span>
       <div className="trending-list">
         {data?.results.map((item, index) => {
           let imgLink = imgPrefix + item?.backdrop_path;
@@ -54,7 +54,7 @@ function Trending() {
             //     background: `url(${imgLink}), lightgray 50% / cover no-repeat`,
             //   }}
             // ></div>
-            <div className="trending-wrapper">
+            <div className="trending-wrapper" key={index}>
               <img src={imgLink} alt={item?.title} className="trending" />
               <div className="trending-title">{item?.title}</div>
             </div>
