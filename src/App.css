@@ -479,12 +479,18 @@ line-height: normal;
   display: none;
 }
 
-.trending-wrapper-container{
+/* .trending-wrapper-container{ */
   /* opacity: 1; */
-  display: flex;
-}
+  /* display: flex; */
+  /* Use this for responsive design of the movie lists,  like padding left and right to be 1 or 2 rem when small screen */
+/* } */
 
 @media screen and (max-width: 700px){
+  .trending-wrapper-container{
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 2rem !important;
+  }
   #logo-header{
     color: #FFF;
     font-family: Oswald;
