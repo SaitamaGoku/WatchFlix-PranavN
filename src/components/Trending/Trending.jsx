@@ -37,6 +37,7 @@ function Trending(props) {
   //   useEffect(() => setData(response), []);
   return (
     <div
+    className="trending-wrapper-container"
       style={{
         display: "flex",
         flexDirection: "column",

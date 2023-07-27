@@ -139,6 +139,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin-left: 0.65rem;
 }
 
 .trending-list{
@@ -478,6 +479,10 @@ line-height: normal;
   display: none;
 }
 
+.trending-wrapper-container{
+  /* opacity: 1; */
+  display: flex;
+}
 
 @media screen and (max-width: 700px){
   #logo-header{
