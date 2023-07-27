@@ -1,9 +1,16 @@
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <header id="header">
-      <div id="logo-header">
+      <div
+        id="logo-header"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         Watch<span style={{ color: "#DA3714" }}>Flix</span>
       </div>
       <div id="sections">

@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=Overpass");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 
 #logo-header{
   color: #FFF;
@@ -10,6 +12,7 @@
   font-weight: 700;
   line-height: normal;
   margin:0;
+  cursor: pointer;
 }
 
 #header{
@@ -17,7 +20,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 1.31rem;
-  width: 100vw;
+  width: 100vmax;
   position: sticky;
   top:0;
   z-index: 100;
@@ -70,7 +73,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 3rem;
-  width: 100vw;
+  width: 100vmax;
   /* position:fixed;
   bottom: 0; */
   box-sizing: border-box;
@@ -115,8 +118,8 @@
   /* position: fixed; */
   /* top:4.8rem; */
   /* bottom: 14rem; */
-  width: 100vw;
-  min-height: 61vh;
+  width: 100vmax;
+  min-height: 61vmin;
   overflow: scroll;
 }
 
@@ -176,9 +179,8 @@
 .category-box{
   /* width: 18.75rem;
   height: 20.625rem; */
-  width: 19.841vw;
-  height: 42.308vh;
-  flex-shrink: 0;
+  width: 19.841vmax;
+  height: 42.308vmin;
   border-radius: 0.75rem;
   /* opacity: 0.699999988079071; */
   background: #131313;
@@ -192,8 +194,8 @@
 .category-img{
   /* width: 18.75rem;
   height: 20.625rem; */
-  width: 19.841vw;
-  height: 42.308vh;
+  width: 19.841vmax;
+  height: 42.308vmin;
   position: absolute;
   object-fit:cover;
   opacity: 0.5;
@@ -202,7 +204,7 @@
 }
 
 .category-desc{
-  width: 14.286vw;
+  width: 14.286vmax;
   /* width: fit-content; */
   color: #FFF;
   text-align: center;
@@ -227,7 +229,7 @@
   justify-content: center;
 }
 .image-heading{
-  width: 79.365vw;
+  width: 79.365vmax;
   height: 9rem;
   color: #FFF;
   font-family: Oswald;
@@ -241,8 +243,19 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.unauth{
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;  
+  flex-wrap: wrap;
+  text-align: center;
+}
 .image-overview{
-  width: 37.5vw;
+  width: 37.5vmax;
   height: 8.812rem;
   /* height: 20px; */
   /* flex-shrink: 0; */
@@ -358,22 +371,83 @@
 .close-btn{
   position: absolute;
   border: none;
-  background: gray;
+  background: inherit;
   background-size:cover;
-  width: 2vw;
-  height: 4vh;
+  width: 2vmax;
+  height: 4vmin;
   border-radius: 20px;
   color: #FFF;
-  top: 2vh;
+  top: 2vmin;
   /* left: "87vw"; */
   z-index: 300;
 }
 
 .close-btn:hover{
+  background: gray;
   opacity: 70%;
 }
 
+.movie-title{
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 5.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 14.616vmax;
+  align-self: flex-start;
+}
 
+.movie-rating{
+  color: #727171;
+font-family: Poppins;
+font-size: 2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+
+.movie-cat{
+  border-radius: 1.40694rem;
+  border: 1.072px solid #DA3714;
+  background: rgba(72, 13, 13, 0.00);
+  display: flex;
+  width: 9.65788vmax;
+  /* height: 2.47625rem; */
+  padding: 0.45025rem 2.92644rem;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.80088rem;
+  flex-shrink: 0;
+}
+
+.movie-cat-text{
+  color: #DA3714;
+  font-family: Montserrat;
+  font-size: 1.35069rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.movie-desc{
+  color: #FFF;
+  font-family: Overpass;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.06rem;
+  width: 87.976vmax;
+  /* height: 15.897vh; */
+  flex-shrink: 0;
+  text-align: justify;
+  /* overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical; */
+}
 
 
 

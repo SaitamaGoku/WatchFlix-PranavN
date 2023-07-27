@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import response from "../../assets/res.json";
+// import response from "../../assets/res.json";
 import { useNavigate } from "react-router-dom";
 
 let config = {
   method: "get",
   maxBodyLength: Infinity,
-  url: "https://api.themoviedb.org/3/trending/movie/day",
+  url: "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
   headers: {
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMTExNmExODI3MGM2MjQwNDM2YjU5NTBkM2E5Nzk0MiIsInN1YiI6IjY0Yjc5MDQ0MTA5Y2QwMDBjN2IwOGI4NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6RvMsGmolIcMF89SdM8MndX6WvFp-k3BeR5Mve8iT4U",
@@ -16,7 +16,7 @@ let config = {
 
 const imgPrefix = "https://image.tmdb.org/t/p/w500";
 
-function Trending(props) {
+function More(props) {
   const [data, setData] = useState();
   const navigate = useNavigate();
 
@@ -73,4 +73,4 @@ function Trending(props) {
   );
 }
 
-export default Trending;
+export default More;

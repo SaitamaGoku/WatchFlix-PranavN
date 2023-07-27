@@ -5,6 +5,11 @@ import Trending from "./components/Trending/Trending";
 import HomePageLayout from "./layout/HomePageLayout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactPlayer from "react-player";
+import { CloseButton } from "@chakra-ui/react";
+import { useState } from "react";
+import Movie from "./components/Movie/Movie";
+import More from "./components/Movie/More";
+import Discover from "./components/Trending/Discover";
 
 function App() {
   return (
@@ -18,8 +23,9 @@ function App() {
                 <HomePageLayout>
                   <CarouselHeader />
                   <Trending heading="Trending Now" />
-                  <Trending heading="Horror" />
+                  <Discover heading="Suspense" />
                   <Trending heading="Sci-Fi" />
+                  {/* <More heading="More" /> */}
                 </HomePageLayout>
               }
             />
@@ -32,16 +38,29 @@ function App() {
               }
             />
             <Route
+              path="movies/:id"
+              element={
+                <HomePageLayout>
+                  <Movie />
+                </HomePageLayout>
+              }
+            />
+            <Route
               path="player"
               element={
                 <HomePageLayout>
                   <ReactPlayer
                     url="https://zee-demo.s3.ap-south-1.amazonaws.com/Mission_+Impossible+%E2%80%93+Dead+Reckoning+Part+One+_+Official+Trailer+(2023+Movie)+-+Tom+Cruise.mp4"
-                    width="80%"
+                    width="100%"
                     height="100%"
                     controls={true}
                     playing={false}
-                    style={{ margin: "auto" }}
+                    style={{
+                      margin: "auto",
+                      justifySelf: "center",
+                      alignSelf: "center",
+                      zIndex: 200,
+                    }}
                   />
                 </HomePageLayout>
               }
@@ -49,13 +68,26 @@ function App() {
             <Route
               path="unauth"
               element={
-                <h1>
-                  You are Unauthorized to Enter this page as you have not logged
-                  in/ Signed Up
-                </h1>
+                <HomePageLayout>
+                  <div style={{ padding: "3rem" }}>
+                    <h1 className="unauth">
+                      You are Unauthorized to Enter this page as you have not
+                      logged in/ Signed Up
+                    </h1>
+                  </div>
+                </HomePageLayout>
               }
             />
-            <Route path="*" element={<h1>404: Page Not Found</h1>} />
+            <Route
+              path="*"
+              element={
+                <HomePageLayout>
+                  <div style={{ padding: "3rem" }}>
+                    <h1 className="unauth">404: Page Not Found</h1>
+                  </div>
+                </HomePageLayout>
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>

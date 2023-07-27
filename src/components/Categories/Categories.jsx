@@ -62,26 +62,26 @@ function Categories() {
       }}
     >
       {/* <div style={{ display: "flex", flexWrap: "wrap" }}> */}
-        {images.map((item, index) => {
-          return (
-            <div
-              className="category-box"
-              // style={{
-              //   background: `url(${item.link})`,
-              //   //   background: "lightgray 50%"
-              //   backgroundRepeat: "no-repeat",
-              //   backgroundColor:"lightgray",
-              //   opacity:"50%",
+      {images.map((item, index) => {
+        return (
+          <div
+            className="category-box"
+            // style={{
+            //   background: `url(${item.link})`,
+            //   background: "lightgray 50%"
+            //   backgroundRepeat: "no-repeat",
+            //   backgroundColor:"lightgray",
+            //   opacity:"50%",
 
-              // }}
-            >
-              <img className="category-img" src={item?.link} />
-              <span className="category-desc" style={{ opacity: "1" }}>
-                {item.desc}
-              </span>
-            </div>
-          );
-        })}
+            // }}
+          >
+            <img className="category-img" src={item?.link} alt={item.desc} />
+            <span className="category-desc" style={{ opacity: "1" }}>
+              {item.desc}
+            </span>
+          </div>
+        );
+      })}
       {/* </div> */}
     </div>
   );
