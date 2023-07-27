@@ -115,8 +115,8 @@ function Movie() {
         flexDirection: "column",
         margin: "0",
         // alignItems: "center",
-        width: "100vmax",
-        gap: "10vmin",
+        width: "100vw",
+        gap: "10vh",
       }}
     >
       <div
@@ -127,17 +127,18 @@ function Movie() {
           justifyContent: "center",
           alignItems: "center",
           position: "relative",
-          width: "100vmax",
+          width: "100vw",
         }}
       >
         <img
           src={imgLink}
           alt={filtered?.[0]?.title}
           style={{
-            width: "88.79vmax",
-            height: "85.674vmin",
+            width: "88.79vw",
+            // height: "85.674vh",
             // width:"83.907rem",
-            height: "41.766rem",
+            minHeight: "32rem",
+            maxHeight: "41.766rem",
             objectFit: "cover",
             borderRadius: "0.9375rem",
             opacity: "50%",
@@ -148,9 +149,11 @@ function Movie() {
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
-            width: "108.79vmax",
+            // width: "108.79vw",
+            width:"78.79vw",
             position: "absolute",
             bottom: "-5rem",
+            // gap: "34vw",
           }}
         >
           <span className="movie-title">{filtered?.[0]?.title}</span>
@@ -159,7 +162,7 @@ function Movie() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: "25vmax",
+              width: "25vw",
             }}
           >
             <div className="btn-holder">
@@ -266,10 +269,10 @@ function Movie() {
           justifyContent: "flex-start",
           alignItems: "center",
           position: "relative",
-          width: "100vmax",
-          //   marginTop: "10vmin",
-          gap: "3vmax",
-          marginLeft: "13vmax",
+          width: "100vw",
+          //   marginTop: "10vh",
+          gap: "3vw",
+          marginLeft: "13vw",
         }}
       >
         <svg
@@ -321,9 +324,9 @@ function Movie() {
           alignItems: "center",
           position: "relative",
           width: "100vmax",
-          //   marginTop: "10vmin",
-          gap: "3vmax",
-          marginLeft: "13vmax",
+          //   marginTop: "10vh",
+          gap: "3vw",
+          marginLeft: "13vw",
         }}
       >
         <div className="movie-cat">
@@ -339,9 +342,7 @@ function Movie() {
           <span className="movie-cat-text">Fantasy</span>
         </div>
       </div>
-      <div
-        style={{ display: "flex", marginLeft: "7vmax", width: "77.976vmax" }}
-      >
+      <div style={{ display: "flex", marginLeft: "7vw", width: "77.976vw" }}>
         <span className="movie-desc">{filtered?.[0]?.overview}</span>
       </div>
       <More heading="More Like This" />

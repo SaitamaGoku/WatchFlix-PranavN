@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { isPlayingState } from "../../store/recoil_store";
 
 function Header() {
   const navigate = useNavigate();
   const [isTabActive, setIsTabActive] = useState({ movies: true });
+  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
   return (
     <header id="header">
       <div
@@ -12,6 +15,7 @@ function Header() {
         onClick={() => {
           setIsTabActive({ movies: true });
           navigate("/");
+          setIsPlaying(false);
         }}
       >
         Watch<span style={{ color: "#DA3714" }}>Flix</span>
@@ -25,7 +29,10 @@ function Header() {
               textDecoration: "none",
             };
           }}
-          onClick={() => setIsTabActive({ movies: true })}
+          onClick={() => {
+            setIsTabActive({ movies: true });
+            setIsPlaying(false);
+          }}
         >
           <span style={{ display: "flex", flexDirection: "column" }}>
             <span
@@ -49,7 +56,10 @@ function Header() {
               textDecoration: "none",
             };
           }}
-          onClick={() => setIsTabActive({ tvSeries: true })}
+          onClick={() => {
+            setIsTabActive({ tvSeries: true });
+            // setIsPlaying(false);
+          }}
         >
           <span style={{ display: "flex", flexDirection: "column" }}>
             <span
@@ -73,7 +83,10 @@ function Header() {
               textDecoration: "none",
             };
           }}
-          onClick={() => setIsTabActive({ documentaries: true })}
+          onClick={() => {
+            setIsTabActive({ documentaries: true });
+            // setIsPlaying(false);
+          }}
         >
           <span style={{ display: "flex", flexDirection: "column" }}>
             <span
@@ -102,7 +115,10 @@ function Header() {
               //   color: isActive ? "red" : "black",
             };
           }}
-          onClick={() => setIsTabActive({ categories: true })}
+          onClick={() => {
+            setIsTabActive({ categories: true });
+            // setIsPlaying(false);
+          }}
         >
           <span style={{ display: "flex", flexDirection: "column" }}>
             <span

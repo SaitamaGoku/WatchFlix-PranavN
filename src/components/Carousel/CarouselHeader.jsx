@@ -7,6 +7,8 @@ import response from "../../assets/res.json";
 import StarIcon from "@mui/icons-material/Star";
 import ReactPlayer from "react-player";
 import { CloseButton } from "@chakra-ui/react";
+import { useRecoilState } from "recoil";
+import { isPlayingState } from "../../store/recoil_store";
 
 let config = {
   method: "get",
@@ -23,7 +25,7 @@ const imgPrefix = "https://image.tmdb.org/t/p/w500";
 // console.log("res",response)
 function CarouselHeader() {
   const [data, setData] = useState();
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
 
   //API Call
   useEffect(() => {
@@ -87,8 +89,8 @@ function CarouselHeader() {
                     url="https://zee-demo.s3.ap-south-1.amazonaws.com/Mission_+Impossible+%E2%80%93+Dead+Reckoning+Part+One+_+Official+Trailer+(2023+Movie)+-+Tom+Cruise.mp4"
                     // width="61%"
                     // height="80%"
-                    width="88.79vmax"
-                    height="85.674vmin"
+                    width="88.79vw"
+                    height="85.674vh"
                     controls={true}
                     playing={false}
                     light={
@@ -124,10 +126,12 @@ function CarouselHeader() {
                   src={imgLink}
                   alt={item?.title}
                   style={{
-                    width: "88.79vmax",
-                    height: "85.674vmin",
+                    width: "88.79vw",
+                    // minHeight: "85.674vh",
+                    minHeight: "32rem",
+                    // height:"max-content",
                     // width:"83.907rem",
-                    height: "41.766rem",
+                    maxHeight: "41.766rem",
                     objectFit: "cover",
                     opacity: "50%",
                     borderRadius: "0.9375rem",
@@ -139,10 +143,10 @@ function CarouselHeader() {
                     display: "flex",
                     flexDirection: "column",
                     position: "absolute",
-                    top: "5.333vmin",
-                    left: "4vmax",
+                    top: "2.2rem",
+                    left: "4vw",
                     alignItems: "flex-start",
-                    width: "50.331vmax",
+                    width: "50.331vw",
                     // height: "54.808vh",
                     height: "26.719rem",
                     gap: "1rem",
@@ -160,7 +164,7 @@ function CarouselHeader() {
                   <div
                     style={{
                       display: "flex",
-                      gap: "2.381vmax",
+                      gap: "2.381vw",
                       alignItems: "center",
                     }}
                   >

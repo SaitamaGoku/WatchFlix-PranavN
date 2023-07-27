@@ -42,6 +42,7 @@ function Trending(props) {
         flexDirection: "column",
         // margin: "0",
         padding: "3rem",
+        paddingBottom: "0",
         // paddingTop: "3rem",
       }}
     >

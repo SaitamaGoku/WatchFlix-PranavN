@@ -42,7 +42,7 @@ function More(props) {
         flexDirection: "column",
         // margin: "0",
         padding: "3rem",
-        // paddingTop: "3rem",
+        paddingTop: "1rem",
       }}
     >
       <span id="trending-heading">{props?.heading}</span>

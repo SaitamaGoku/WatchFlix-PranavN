@@ -42,7 +42,8 @@ function Discover(props) {
         flexDirection: "column",
         // margin: "0",
         padding: "3rem",
-        // paddingTop: "3rem",
+        paddingBottom: "0",
+        paddingTop: "1rem",
       }}
     >
       <span id="trending-heading">{props?.heading}</span>
