@@ -187,6 +187,7 @@ function CarouselHeader() {
                         </svg>
                       </span>
                       <span className="watchnow-text">Watch Now</span>
+                      <span className="watchnow-text-small">Watch</span>
                     </button>
                     <div className="btn-holder">
                       <svg

@@ -342,6 +342,9 @@
   letter-spacing: 0.03375rem;
 }
 
+.watchnow-text-small{
+  display: none;
+}
 .btn-holder{
   display: flex;
   flex-direction: column;
@@ -543,5 +546,30 @@ line-height: normal;
 
   #hamburger{
     display: block;
+  }
+  .watchnow-text-small{
+    display: inline;
+    color: #FFF;
+    font-family: Overpass;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.03375rem;
+  }
+  .watchnow-text{
+    display: none;
+  }
+  .watchnow-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.84rem;
+    width: 8.01563rem;
+    height: 2.8125rem;
+    flex-shrink: 0;
+    border-radius: 1.6875rem;
+    background: #DA3714;
+    border: none;
   }
 }
