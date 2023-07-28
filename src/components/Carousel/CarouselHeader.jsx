@@ -92,7 +92,7 @@ function CarouselHeader() {
                     width="88.79vw"
                     height="85.674vh"
                     controls={true}
-                    playing={false}
+                    playing={isPlaying}
                     light={
                       <>
                         <img
