@@ -83,6 +83,7 @@
   justify-content: space-around;
   padding: 3rem;
   width: 100vw;
+  gap:2rem;
   /* position:fixed;
   bottom: 0; */
   flex-wrap: wrap;
