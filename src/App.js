@@ -64,7 +64,7 @@ function App() {
                     width="100%"
                     height="100%"
                     controls={true}
-                    playing={false}
+                    playing={true}
                     light={
                       <>
                         <img
