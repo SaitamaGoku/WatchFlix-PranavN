@@ -547,6 +547,7 @@ line-height: normal;
   #hamburger{
     display: block;
   }
+  
   .watchnow-text-small{
     display: inline;
     color: #FFF;
@@ -557,9 +558,11 @@ line-height: normal;
     line-height: normal;
     letter-spacing: 0.03375rem;
   }
+
   .watchnow-text{
     display: none;
   }
+
   .watchnow-btn{
     display: flex;
     align-items: center;
