@@ -513,8 +513,16 @@ line-height: normal;
 /* .page2{
   position: absolute;
 } */
+.imdb-logo{
+  display: block;
+}
 
-@media screen and (max-width: 1000px){
+.imdb-logo-small{
+  /* flex-shrink: 0; */
+  display: none;
+}
+
+@media screen and (max-width: 1200px){
   .trending-wrapper-container{
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -523,7 +531,7 @@ line-height: normal;
   #logo-header{
     color: #FFF;
     font-family: Oswald;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -601,11 +609,114 @@ line-height: normal;
     display: none;
   }
 
-  /* .page2-wrapper{
+  .page2-wrapper{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     width: 25vw;
+  }
+
+
+  .category-desc{
+    width: 14.286vw;
+    /* width: fit-content; */
+    color: #FFF;
+    text-align: center;
+    font-family: Overpass;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.06rem;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    z-index: 100;
+    opacity: 100%;
+    flex-wrap: wrap;
+    position: absolute;
+  }
+
+  .movie-title{
+    color: #FFF;
+    font-family: Oswald;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    /* width: 14.616vw; */
+    width: 44vw;
+    align-self: flex-start;
+  }
+
+  /* .btn-holder{
+    display: none;
   } */
+  .imdb{
+    width: 50vw !important;
+  }
+
+  .movie-rating{
+    color: #727171;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  }
+
+  .imdb-logo{
+    display: none;
+  }
+
+  .imdb-logo-small{
+    flex-shrink: 0;
+    display: block;
+  }
+  .cats{
+    width: 50vw !important;
+    flex-wrap: wrap;
+  }
+
+  .movie-cat{
+    border-radius: 1.40694rem;
+    border: 1.072px solid #DA3714;
+    background: rgba(72, 13, 13, 0.00);
+    display: flex;
+    width: 4.65788vw;
+    /* height: 2.47625rem; */
+    padding: 0.45025rem 2.92644rem;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.80088rem;
+    flex-shrink: 0;
+  }
+  
+  .movie-cat-text{
+    color: #DA3714;
+    font-family: Montserrat;
+    font-size: 0.85069rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .movie-desc{
+    color: #FFF;
+    font-family: Overpass;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.06rem;
+    width: 87.976vw;
+    /* height: 15.897vh; */
+    flex-shrink: 0;
+    text-align: justify;
+    /* overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical; */
+  }
 }
