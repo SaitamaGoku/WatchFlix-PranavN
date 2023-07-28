@@ -721,3 +721,25 @@ line-height: normal;
     -webkit-box-orient: vertical; */
   }
 }
+
+@media screen and (max-width: 400px){
+  .category-desc{
+    width: 14.286vw;
+    /* width: fit-content; */
+    color: #FFF;
+    text-align: center;
+    font-family: Overpass;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.06rem;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    z-index: 100;
+    opacity: 100%;
+    flex-wrap: wrap;
+    position: absolute;
+  }
+}
