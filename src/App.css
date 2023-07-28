@@ -85,6 +85,7 @@
   width: 100vw;
   /* position:fixed;
   bottom: 0; */
+  flex-wrap: wrap;
   box-sizing: border-box;
 }
 
@@ -199,6 +200,10 @@
   justify-content: center;
   align-items: center;
   position: relative;
+}
+.category-box:hover{
+  cursor: pointer;
+  scale: 1.05;
 }
 
 .category-img{
@@ -485,7 +490,11 @@ line-height: normal;
   /* Use this for responsive design of the movie lists,  like padding left and right to be 1 or 2 rem when small screen */
 /* } */
 
-@media screen and (max-width: 700px){
+#hamburger{
+  display: none;
+}
+
+@media screen and (max-width: 1000px){
   .trending-wrapper-container{
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -505,8 +514,12 @@ line-height: normal;
   #header{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* margin:auto; */
+    /* margin-right: 3vw; */
     padding: 0.71rem;
+    padding-left: 6vw;
+    padding-right: 6vw;
     width: 100vw;
     position: sticky;
     top:0;
@@ -515,50 +528,20 @@ line-height: normal;
     background: #1A1A1D;
   }
   
-  #signup-header{
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-  
-  .section-font{
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-  
-  .active-section-font{
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-  
-  .selected-section-font{
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-  
   #sections{
-    display: flex;
-    gap:3.58rem;
+    /* display: flex;
+    gap:3.58rem; */
+    display: none;
   }
   
   #header-right{
-    display: flex;
+    /* display: flex;
     gap:2.39rem;
-    flex-shrink: 0;
+    flex-shrink: 0; */
+    display: none;
+  }
+
+  #hamburger{
+    display: block;
   }
 }

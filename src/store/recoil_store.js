@@ -5,4 +5,9 @@ const isPlayingState = atom({
   default: false,
 });
 
-export { isPlayingState };
+const isTabActiveState = atom({
+  key: "isTabActiveState",
+  default: { movies: true },
+});
+
+export { isPlayingState, isTabActiveState };

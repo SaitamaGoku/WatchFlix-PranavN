@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { isTabActiveState } from "../../store/recoil_store";
+
 const images = [
   {
     desc: "Action & Adventure",
-    link: "https://s3-alpha-sig.figma.com/img/995e/56d3/2019e67a8414340621db69110d5efe73?Expires=1691366400&Signature=Bg6~vHphTaMKfFUNbNGgqwWgYfD~tW~rD2tsgaz2ELT2NB-jgO4gagoAn42g~8eJKhkNtKHcMeLjhZ3xlZAh0io2JhswkF0Dl7E8ufCQ-mqGNu5pwdW-CVSbvuuPCFxYkpjslH8Bc2pmB06n2brdv40VqYmWAUQ-kaReg1mmNVaaBsj1c8ldTaE4TwniylUjajxl7DX7~3pRNaWJBDkKD8RlS3H9I41CTL0rxMrxAAqg6RP5eHxw0X6HuTojf-8SbtCRZoLFKY4iZ8b--1zYFl24ZAvOn6DlfEnRloUndhK1vHh8-ECK~6uAcDDAefbvd7oR5pUzjtzrvBvxLhwxRg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    link: "https://s3-alpha-sig.figma.com/img/6998/919a/7e6e2d9f75f9a286b2aefa1bcbb435a1?Expires=1691366400&Signature=QZgD-f48pMxOvooARdS0N8BTV4XwE9~9sePbPbgDIuZDb8p0NhzpV4uwPmxDxL26AUjor9~Q9cx~yy~T5s4vb4KQEsl-rCWQTEnT29pvKgH9i7zz2k3GMm0tAo3hGp1O5Wu6pYyq5f~5uyBJHNPZoL3bKAkWbRSm-khgIBAWShGSjlVoRMh1NnUNnkVeCv2Xo-Z5~338wZ7JU2dtXuvQJPJieeXQ3UXuvDTmmETkJkDyN50zkXTGZP9i6Uzec3A9qLVV7Jfbt0jwzbxhwnUChL4h5bdElFK-DT16e1QLHlZVIp~-8lBJj1J14uUNm7U9IBihSertAj9CKU6HMgk6zg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   },
   {
     desc: "Anime",
@@ -9,7 +13,7 @@ const images = [
   },
   {
     desc: "Comedy",
-    link: "https://s3-alpha-sig.figma.com/img/6998/919a/7e6e2d9f75f9a286b2aefa1bcbb435a1?Expires=1691366400&Signature=QZgD-f48pMxOvooARdS0N8BTV4XwE9~9sePbPbgDIuZDb8p0NhzpV4uwPmxDxL26AUjor9~Q9cx~yy~T5s4vb4KQEsl-rCWQTEnT29pvKgH9i7zz2k3GMm0tAo3hGp1O5Wu6pYyq5f~5uyBJHNPZoL3bKAkWbRSm-khgIBAWShGSjlVoRMh1NnUNnkVeCv2Xo-Z5~338wZ7JU2dtXuvQJPJieeXQ3UXuvDTmmETkJkDyN50zkXTGZP9i6Uzec3A9qLVV7Jfbt0jwzbxhwnUChL4h5bdElFK-DT16e1QLHlZVIp~-8lBJj1J14uUNm7U9IBihSertAj9CKU6HMgk6zg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    link: "https://s3-alpha-sig.figma.com/img/995e/56d3/2019e67a8414340621db69110d5efe73?Expires=1691366400&Signature=Bg6~vHphTaMKfFUNbNGgqwWgYfD~tW~rD2tsgaz2ELT2NB-jgO4gagoAn42g~8eJKhkNtKHcMeLjhZ3xlZAh0io2JhswkF0Dl7E8ufCQ-mqGNu5pwdW-CVSbvuuPCFxYkpjslH8Bc2pmB06n2brdv40VqYmWAUQ-kaReg1mmNVaaBsj1c8ldTaE4TwniylUjajxl7DX7~3pRNaWJBDkKD8RlS3H9I41CTL0rxMrxAAqg6RP5eHxw0X6HuTojf-8SbtCRZoLFKY4iZ8b--1zYFl24ZAvOn6DlfEnRloUndhK1vHh8-ECK~6uAcDDAefbvd7oR5pUzjtzrvBvxLhwxRg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   },
   {
     desc: "Documentary",
@@ -50,6 +54,8 @@ const images = [
 ];
 
 function Categories() {
+  const navigate = useNavigate();
+  const [isTabActive, setIsTabActive] = useRecoilState(isTabActiveState);
   return (
     <div
       style={{
@@ -74,6 +80,10 @@ function Categories() {
             //   opacity:"50%",
 
             // }}
+            onClick={() => {
+              setIsTabActive({ movies: true });
+              navigate("/movies");
+            }}
           >
             <img className="category-img" src={item?.link} alt={item.desc} />
             <span className="category-desc" style={{ opacity: "1" }}>

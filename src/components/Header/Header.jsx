@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { isPlayingState } from "../../store/recoil_store";
+import SwipeableTemporaryDrawer from "../SwipeableTemporaryDrawer/SwipeableTemporaryDrawer";
+import { isTabActiveState } from "../../store/recoil_store";
 
 function Header() {
   const navigate = useNavigate();
-  const [isTabActive, setIsTabActive] = useState({ movies: true });
+  const [isTabActive, setIsTabActive] = useRecoilState(isTabActiveState);
   const [isPlaying, setIsPlaying] = useRecoilState(isPlayingState);
   return (
     <header id="header">
@@ -14,8 +16,8 @@ function Header() {
         id="logo-header"
         onClick={() => {
           setIsTabActive({ movies: true });
-          navigate("/");
           setIsPlaying(false);
+          navigate("/");
         }}
       >
         Watch<span style={{ color: "#DA3714" }}>Flix</span>
@@ -143,6 +145,7 @@ function Header() {
           height="27"
           viewBox="0 0 27 27"
           fill="none"
+          style={{ cursor: "pointer" }}
         >
           <path
             d="M11.4375 21C13.3788 20.9996 15.2643 20.3497 16.7936 19.1537L21.6017 23.9619L23.1483 22.4153L18.3401 17.6072C19.5367 16.0778 20.187 14.1919 20.1875 12.25C20.1875 7.42547 16.262 3.5 11.4375 3.5C6.61294 3.5 2.68747 7.42547 2.68747 12.25C2.68747 17.0745 6.61294 21 11.4375 21ZM11.4375 5.6875C15.0567 5.6875 18 8.63078 18 12.25C18 15.8692 15.0567 18.8125 11.4375 18.8125C7.81825 18.8125 4.87497 15.8692 4.87497 12.25C4.87497 8.63078 7.81825 5.6875 11.4375 5.6875Z"
@@ -155,6 +158,7 @@ function Header() {
           height="27"
           viewBox="0 0 27 27"
           fill="none"
+          style={{ cursor: "pointer" }}
         >
           <path
             d="M13.125 25.4958C13.5843 25.4852 14.0251 25.3125 14.3694 25.0082C14.7136 24.704 14.9392 24.2878 15.0062 23.8333H11.1708C11.2397 24.3001 11.4758 24.7261 11.8353 25.0319C12.1948 25.3377 12.6531 25.5026 13.125 25.4958Z"
@@ -169,7 +173,12 @@ function Header() {
             fill="#DA3714"
           />
         </svg>
-        <span id="signup-header">Sign up</span>
+        <span id="signup-header" style={{ cursor: "pointer" }}>
+          Sign up
+        </span>
+      </div>
+      <div id="hamburger">
+        <SwipeableTemporaryDrawer />
       </div>
     </header>
   );
