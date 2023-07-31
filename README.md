@@ -10,15 +10,18 @@ The WatchFlix website.
 
 
 ## Screenshots
-
+Home Page
 ![Home Page](https://github.com/SaitamaGoku/WatchFlix-PranavN/blob/main/screenshots/WatchFlix_HomePage.png?raw=true)
+Movie Page
 ![Movie Page](https://github.com/SaitamaGoku/WatchFlix-PranavN/blob/main/screenshots/WatchFlix_MoviePage.png?raw=true)
+Categories Page
 ![Categories Page](https://github.com/SaitamaGoku/WatchFlix-PranavN/blob/main/screenshots/WatcFlix_CategoriesPage.png?raw=true)
 
 
 ## Tech Stack
 
 **Client:** React JS, CSS, Recoil, MUI, Chakra UI, React Router
+
 **API:** TMDB API
 
 # Getting Started with Create React App
