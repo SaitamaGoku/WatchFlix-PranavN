@@ -1,3 +1,26 @@
+# WatchFlix - Nampally Pranav
+
+The WatchFlix website.
+
+
+## 🔗 Links
+[Link to the Website](https://watch-flix-pranav-n.vercel.app/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/pranav-nampally-7406b41a7)
+
+
+## Screenshots
+
+![Home Page](https://github.com/SaitamaGoku/WatchFlix-PranavN/blob/main/screenshots/WatchFlix_HomePage.png?raw=true)
+![Movie Page](https://github.com/SaitamaGoku/WatchFlix-PranavN/blob/main/screenshots/WatchFlix_MoviePage.png?raw=true)
+![Categories Page](https://github.com/SaitamaGoku/WatchFlix-PranavN/blob/main/screenshots/WatcFlix_CategoriesPage.png?raw=true)
+
+
+## Tech Stack
+
+**Client:** React JS, CSS, Recoil, MUI, Chakra UI, React Router
+**API:** TMDB API
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
